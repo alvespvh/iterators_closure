@@ -52,14 +52,31 @@ fn main() {
         user_pref2, giveaway2
     );
 
-    let expensive_closure = |num: u32| -> u32 {
-        println!("calculatins slowly...");
-        thread::sleep(Duration::from_secs(2));
-        num
-    };
+    // let expensive_closure = |num: u32| -> u32 {
+    //     println!("calculatins slowly...");
+    //     thread::sleep(Duration::from_secs(2));
+    //     num
+    // };
 
-    let example_closure = |x| x;
+    // let example_closure = |x| x;
 
-    let s = example_closure(String::from("Hello"));
-    let n = example_closure(5);
+    // let s = example_closure(String::from("Hello"));
+    // let n = example_closure(5);
+
+    // let list = vec![1, 2, 3];
+    // println!("Before defining closure: {list:?}");
+
+    // let only_borrows = || println!("From closure: {list:?}");
+
+    // println!("Before calling closure: {list:?}");
+    // only_borrows();
+    // println!("After calling closure: {list:?}");
+
+    // agora com captura mutavel
+    let mut list = vec![1, 2, 3];
+    println!("Before defining closure: {list:?}");
+
+    let mut borrows_mutably = || list.push(7);
+    borrows_mutably();
+    println!("After calling closure: {list:?}");
 }
