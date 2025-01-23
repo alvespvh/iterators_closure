@@ -1,3 +1,5 @@
+mod processing_a_series_of_items_with_iterators;
+
 use std::{thread, time::Duration};
 
 #[derive(Debug, PartialEq, Copy, Clone)]
@@ -110,4 +112,6 @@ fn main() {
         r.width
     });
     println!("{list:#?}, sorted in {num_sort_operations} operations");
+
+    processing_a_series_of_items_with_iterators::iteratos_test();
 }
