@@ -1,3 +1,4 @@
+mod methods_that_produce_other_iterators;
 mod processing_a_series_of_items_with_iterators;
 
 use std::{thread, time::Duration};
@@ -114,4 +115,5 @@ fn main() {
     println!("{list:#?}, sorted in {num_sort_operations} operations");
 
     processing_a_series_of_items_with_iterators::iteratos_test();
+    methods_that_produce_other_iterators::produce_iterators();
 }
